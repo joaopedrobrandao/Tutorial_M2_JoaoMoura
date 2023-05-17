@@ -1,15 +1,15 @@
 ﻿body, html {
 	width: 100%;
 	height: 100%;
-	background-color: #acb1bf;
+	background-color: #96b2ff;
 	margin: 0;
-	color: #ff4645;
+	color: #6f1010;
 	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
     Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
 }
 
 h1{
-	background-color: #ff4645;
+	background-color: #80ff45;
 	color: white;
 }
 

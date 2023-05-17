@@ -1,15 +1,20 @@
-# Exercício para entrega na SEMANA 3 - referente ao conteúdo na etapa 3 (`SEMANA03/02_TUTORIAL`)
+# Roteiro - Exercício de personalização da Etapa 2
 
-## Descrição
-Atualize seu seu projeto individual do currículo profissional incluindo 5 endpoints para gerenciar uma das tabelas/áreas criadas, o que chamamos de CRUD.
+Este exercício tem a finalidade de entender como é o seu grau de abstração, deixando de lado a parte visual, e tendo como foco a camada de persistência usando banco de dados, em nosso caso o Sqlite.
 
-Por exemplo, se você tiver criado a tabela formacao, deveria criar os seguintes endpoints:
+Imagine que você tenha que desenvolver um sistema para armazenar as informações para criar um currículo. E nesse sentido a primeira coisa que pensamos é uma página que tenha apresente seus dados pessoais, habilidades, experiências e ferramentas conhecidas.
 
-#/listaFormacao (SELECT)
-#/insereFormacao (INSERT)
-#/atualizaFormacao (UPDATE, lembrando que para atualizar é preciso ter dois endpoints, um get e outro post)
-#/removeFormacao (DELETE)
+Pensando somente na estrutura do banco, crie o modelo relacional e modelo físico, que consiga armazenar as informações contidas na seguinte imagem:
 
-## Forma de entrega
-- Publique a sua solução no seu Github pessoal (criado com o e-mail Inteli conforme instruído no tutorial da Semana 1)
-- Na resposta ao card na Adalove, inclua o link para o seu Github
+<p style="text-align: center;"><img src="curriculo.png" width="80%"></p>
+
+# Entregáveis:
+
+Em seu github pessoal, envie os seguintes artefatos:
+
+    1. Imagem representando o modelo relacional
+    2. Arquivo .sql ou .db contendo a estrutura física do banco de dados, gerado pelo SGDB Sqlite3
+
+
+
+
