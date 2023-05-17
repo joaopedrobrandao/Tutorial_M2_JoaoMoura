@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?><sqlb_project><db path="C:/Users/Inteli/Documents/GitHub/MOD1_INTELI_JP/Tutorial_M2_JoaoMoura/SEMANA_02/02_AUT_EST_ENTREGA/projeto.db" readonly="0" foreign_keys="1" case_sensitive_like="0" temp_store="0" wal_autocheckpoint="1000" synchronous="2"/><attached/><window><main_tabs open="structure browser pragmas query" current="0"/></window><tab_structure><column_width id="0" width="300"/><column_width id="1" width="0"/><column_width id="2" width="150"/><column_width id="3" width="3167"/><column_width id="4" width="0"/><expanded_item id="0" parent="1"/><expanded_item id="1" parent="1"/><expanded_item id="2" parent="1"/><expanded_item id="3" parent="1"/></tab_structure><tab_browse><current_table name="4,15:maintb_achievements"/><default_encoding codec=""/><browse_table_settings><table schema="main" name="sqlite_sequence" show_row_id="0" encoding="" plot_x_axis="" unlock_view_pk="_rowid_"><sort/><column_widths><column index="1" value="68"/><column index="2" value="61"/></column_widths><filter_values/><conditional_formats/><row_id_formats/><display_formats/><hidden_columns/><plot_y_axes/><global_filter/></table><table schema="main" name="tb_achievements" show_row_id="0" encoding="" plot_x_axis="" unlock_view_pk="_rowid_"><sort/><column_widths><column index="1" value="61"/><column index="2" value="61"/><column index="3" value="93"/><column index="4" value="82"/></column_widths><filter_values/><conditional_formats/><row_id_formats/><display_formats/><hidden_columns/><plot_y_axes/><global_filter/></table><table schema="main" name="tb_curriculum" show_row_id="0" encoding="" plot_x_axis="" unlock_view_pk="_rowid_"><sort/><column_widths><column index="1" value="61"/><column index="2" value="92"/><column index="3" value="75"/><column index="4" value="94"/><column index="5" value="115"/><column index="6" value="191"/><column index="7" value="183"/><column index="8" value="149"/></column_widths><filter_values/><conditional_formats/><row_id_formats/><display_formats/><hidden_columns/><plot_y_axes/><global_filter/></table><table schema="main" name="tb_experience" show_row_id="0" encoding="" plot_x_axis="" unlock_view_pk="_rowid_"><sort/><column_widths><column index="1" value="61"/><column index="2" value="61"/><column index="3" value="198"/><column index="4" value="152"/><column index="5" value="140"/><column index="6" value="76"/></column_widths><filter_values/><conditional_formats/><row_id_formats/><display_formats/><hidden_columns/><plot_y_axes/><global_filter/></table><table schema="main" name="tb_formation" show_row_id="0" encoding="" plot_x_axis="" unlock_view_pk="_rowid_"><sort/><column_widths><column index="1" value="61"/><column index="2" value="61"/><column index="3" value="169"/><column index="4" value="148"/><column index="5" value="136"/><column index="6" value="146"/></column_widths><filter_values/><conditional_formats/><row_id_formats/><display_formats/><hidden_columns/><plot_y_axes/><global_filter/></table><table schema="main" name="tb_personality" show_row_id="0" encoding="" plot_x_axis="" unlock_view_pk="_rowid_"><sort/><column_widths><column index="1" value="61"/><column index="2" value="61"/><column index="3" value="94"/><column index="4" value="93"/></column_widths><filter_values/><conditional_formats/><row_id_formats/><display_formats/><hidden_columns/><plot_y_axes/><global_filter/></table><table schema="main" name="tb_skill" show_row_id="0" encoding="" plot_x_axis="" unlock_view_pk="_rowid_"><sort/><column_widths><column index="1" value="61"/><column index="2" value="61"/><column index="3" value="91"/><column index="4" value="90"/></column_widths><filter_values/><conditional_formats/><row_id_formats/><display_formats/><hidden_columns/><plot_y_axes/><global_filter/></table></browse_table_settings></tab_browse><tab_sql><sql name="SQL 1">CREATE TABLE &quot;tb_curriculum&quot; (
+	&quot;c_id&quot;	INTEGER NOT NULL,
+	&quot;c_name&quot;	TEXT NOT NULL,
+	&quot;c_role&quot;	TEXT NOT NULL,
+	&quot;c_photo&quot;	TEXT NOT NULL,
+	&quot;c_address&quot;	TEXT NOT NULL,
+	&quot;c_phone_number&quot;	TEXT NOT NULL,
+	&quot;c_email_address&quot;	TEXT NOT NULL,
+	&quot;c_description&quot;	TEXT NOT NULL,
+	PRIMARY KEY(&quot;c_id&quot; AUTOINCREMENT)
+)
+CREATE TABLE &quot;tb_achievements&quot; (
+	&quot;c_id&quot;	INTEGER NOT NULL,
+	&quot;a_id&quot;	INTEGER NOT NULL,
+	&quot;a_name&quot;	TEXT NOT NULL,
+	&quot;a_date&quot;	DATE NOT NULL,
+	&quot;a_description&quot;	TEXT NOT NULL,
+	PRIMARY KEY(&quot;a_id&quot; AUTOINCREMENT),
+	FOREIGN KEY(&quot;c_id&quot;) REFERENCES &quot;tb_curriculum&quot;(&quot;c_id&quot;)
+)
+CREATE TABLE &quot;tb_experience&quot; (
+	&quot;c_id&quot;	INTEGER NOT NULL,
+	&quot;e_id&quot;	INTEGER NOT NULL,
+	&quot;e_company_name&quot;	TEXT NOT NULL,
+	&quot;e_initial_date&quot;	DATE NOT NULL,
+	&quot;e_final_date&quot;	DATE NOT NULL,
+	&quot;e_role&quot;	TEXT NOT NULL,
+	&quot;e_description&quot;	TEXT NOT NULL,
+	FOREIGN KEY(&quot;c_id&quot;) REFERENCES &quot;tb_curriculum&quot;(&quot;c_id&quot;),
+	PRIMARY KEY(&quot;e_id&quot; AUTOINCREMENT)
+)
+CREATE TABLE &quot;tb_formation&quot; (
+	&quot;c_id&quot;	INTEGER NOT NULL,
+	&quot;f_id&quot;	INTEGER NOT NULL,
+	&quot;f_course_name&quot;	TEXT NOT NULL,
+	&quot;f_initial_date&quot;	DATE NOT NULL,
+	&quot;f_final_date&quot;	DATE NOT NULL,
+	&quot;f_description&quot;	TEXT NOT NULL,
+	FOREIGN KEY(&quot;c_id&quot;) REFERENCES &quot;tb_curriculum&quot;(&quot;c_id&quot;),
+	PRIMARY KEY(&quot;f_id&quot; AUTOINCREMENT)
+)
+CREATE TABLE &quot;tb_personality&quot; (
+	&quot;c_id&quot;	INTEGER NOT NULL,
+	&quot;p_id&quot;	INTEGER NOT NULL,
+	&quot;p_name&quot;	TEXT NOT NULL,
+	&quot;p_value&quot;	TEXT NOT NULL,
+	PRIMARY KEY(&quot;p_id&quot; AUTOINCREMENT),
+	FOREIGN KEY(&quot;c_id&quot;) REFERENCES &quot;tb_curriculum&quot;(&quot;c_id&quot;)
+)
+CREATE TABLE &quot;tb_skill&quot; (
+	&quot;c_id&quot;	INTEGER NOT NULL,
+	&quot;s_id&quot;	INTEGER NOT NULL,
+	&quot;s_name&quot;	TEXT NOT NULL,
+	&quot;s_value&quot;	TEXT NOT NULL,
+	FOREIGN KEY(&quot;c_id&quot;) REFERENCES &quot;tb_curriculum&quot;(&quot;c_id&quot;),
+	PRIMARY KEY(&quot;s_id&quot; AUTOINCREMENT)
+)</sql><current_tab id="0"/></tab_sql></sqlb_project>
